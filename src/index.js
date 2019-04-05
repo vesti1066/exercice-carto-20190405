@@ -1,2 +1,3 @@
-const DATA = require('./data')
-console.log(DATA)
+import { prop } from 'ramda'
+
+console.log(prop('a', {a:'hello'}))
