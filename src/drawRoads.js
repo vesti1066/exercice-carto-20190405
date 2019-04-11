@@ -6,15 +6,15 @@ export default (svg, pathCreator) => {
   const smallRoadTypes = ['footway', 'path']
   const bigRoadTypes = ['primary']
   
-  const getRoadWidth = feature => {
+  const getRoad = feature => {
     const type = path(['properties', 'highway'], feature)
     if (smallRoadTypes.includes(type)) {
-      return 1
-    }
-    if (bigRoadTypes.includes(type)) {
       return 5
     }
-    return 3
+    if (bigRoadTypes.includes(type)) {
+      return 20
+    }
+    return 7
   }
   
   svg.selectAll('path.road')
@@ -24,7 +24,7 @@ export default (svg, pathCreator) => {
       .attr('class', 'road')
       .attr('d', pathCreator)
       .attr('fill', 'none')
-      .attr('stroke', 'black')
-      .attr('stroke-width', getRoadWidth)
+      .attr('stroke', 'grey')
+      .attr('stroke-width', getRoad)
       .attr('stroke-linecap', 'round')
 }

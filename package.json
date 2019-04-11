@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "d3": "^5.9.1",
+    "live-server": "^1.2.1",
     "ramda": "^0.26.1"
   }
 }
